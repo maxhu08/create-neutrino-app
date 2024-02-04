@@ -1,6 +1,6 @@
 <div align="center">
 
-# neutrino-template
+# create-neutrino-app
 
 🌌 lightweight template for creating a website with module bundling, hmr, typescript, tailwindcss & sass
 
