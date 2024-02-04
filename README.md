@@ -16,6 +16,7 @@ this template is pretty minimal and lightweight here is structure of template
 neutrino-template
 ├── src
 │   ├── scripts
+│       ├── hello.ts
 │   │   └── index.ts
 │   ├── styles
 │   │   └── styles.css
