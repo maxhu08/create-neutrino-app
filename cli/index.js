@@ -19,7 +19,7 @@ program
     }
     const destinationFolderPath = path.join(currentDirectory, name);
 
-    const command = `npx degit https://github.com/maxhu08/neutrino-template/templates/default ${destinationFolderPath}`;
+    const command = `npx degit https://github.com/maxhu08/create-neutrino-app/templates/default ${destinationFolderPath}`;
 
     try {
       execSync(`${command} > /dev/null 2>&1`, { encoding: "utf-8" });
