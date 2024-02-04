@@ -6,7 +6,29 @@
 
 </div>
 
-very easy to deploy, here is a [demo](https://neutrino-template.vercel.app/) on vercel
+this template uses parcel
+
+alos this is very easy to deploy, here is a [demo](https://neutrino-template.vercel.app/) on vercel
+
+this template is pretty minimal and lightweight here is structure of template
+
+```
+neutrino-template
+├── src
+│   ├── scripts
+│   │   └── index.ts
+│   ├── styles
+│   │   └── styles.css
+│   ├── index.html
+│   └── icon.svg
+│
+├──.gitignore
+├──.postcssrc
+├──package.json
+├──README.md
+├──tailwind.config.js
+└──tsconfig.json
+```
 
 ### getting started
 
