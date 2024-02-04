@@ -1,12 +1,18 @@
 {
   "name": "neutrino-template",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "tool to quickly generate a minimalistic template with module bundling, hmr, typescript, tailwind & sass configured",
+  "keywords": [
+    "template",
+    "parcel"
+  ],
+  "main": "cli/index.js",
+  "bin": {
+    "create-neutrino-app": "cli/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
