@@ -22,12 +22,12 @@ neutrino-template
 │   ├── index.html
 │   └── icon.svg
 │
-├──.gitignore
-├──.postcssrc
-├──package.json
-├──README.md
-├──tailwind.config.js
-└──tsconfig.json
+├── .gitignore
+├── .postcssrc
+├── package.json
+├── README.md
+├── tailwind.config.js
+└── tsconfig.json
 ```
 
 ### getting started
