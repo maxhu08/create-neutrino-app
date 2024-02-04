@@ -8,7 +8,7 @@
 
 this template uses parcel
 
-alos this is very easy to deploy, here is a [demo](https://neutrino-template.vercel.app/) on vercel
+alos this is very easy to deploy, here is a [demo](https://neutrino-app.vercel.app/) on vercel
 
 this template is pretty minimal and lightweight here is structure of template
 

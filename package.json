@@ -1,6 +1,7 @@
 {
   "name": "create-neutrino-app",
   "version": "1.0.0",
+  "author": "",
   "description": "tool to quickly generate a minimalistic template with module bundling, hmr, typescript, tailwind & sass configured",
   "keywords": [
     "template",
@@ -14,7 +15,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "commander": "^12.0.0"
