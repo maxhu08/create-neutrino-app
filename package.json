@@ -1,7 +1,7 @@
 {
   "name": "neutrino-template",
   "version": "1.0.0",
-  "description": "template",
+  "description": "🌌 lightweight template for creating a website with module bundling hmr, typescript, tailwindcss & sass",
   "scripts": {
     "dev": "parcel src/*.html",
     "build": "rm -rf dist && parcel build src/*.html"
