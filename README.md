@@ -35,21 +35,14 @@ neutrino-template
 
 ```bash
 # clone template
-git clone https://github.com/maxhu08/neutrino-template.git
+npx create-neutrino-app my-app
 
 # cd
-cd neutrino-template
+cd my-app
 
 # installing dependecies
 npm install
 
-# delete git info so you can add your own repo
-rm -rf .git
-```
-
-then start the dev server:
-
-```bash
 # start server
 npm run dev
 ```
