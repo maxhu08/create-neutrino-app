@@ -2,7 +2,7 @@
 
 # neutrino-template
 
-🌌 lightweight template for creating a website with module bundling hmr, typescript, tailwindcss & sass
+🌌 lightweight template for creating a website with module bundling, hmr, typescript, tailwindcss & sass
 
 </div>
 
