@@ -1,33 +1,31 @@
 #!/usr/bin/env node
 
-const path = require("path");
 const { program } = require("commander");
-const { exec } = require("child_process");
 const chalk = require("chalk");
 const prompt = require("prompt-sync")();
 
-const currentDirectory = process.cwd();
+// steps
+const cloneTemplate = require("./steps/clone");
+const installDependecies = require("./steps/install");
+
+const packageManager = process.env.npm_config_user_agent;
 
 program
   .arguments("[name]")
   .description(
     `tool to quickly generate a minimalistic template with module bundling, hmr, typescript, tailwind & sass configured`
   )
-  .action((name) => {
+  .action(async (name) => {
     if (!name) {
       name = prompt(`${chalk.blue("?")} enter the app name: `);
     }
-    const destinationFolderPath = path.join(currentDirectory, name);
 
-    const command = `npx degit https://github.com/maxhu08/create-neutrino-app/templates/default ${destinationFolderPath}`;
+    // clone template
+    await cloneTemplate({ name }, ({ destinationFolderPath }) => {
+      console.log(destinationFolderPath);
 
-    exec(`${command} > /dev/null 2>&1`, { encoding: "utf-8" }, (err) => {
-      if (err) {
-        console.error(`${chalk.red("✘")} err cloning template: ${err}`);
-        process.exit(1);
-      }
-
-      console.log(`🌌 template cloned into ${destinationFolderPath}`);
+      // install dependecies based on package manager
+      // await installDependecies({ destinationFolderPath, packageManager });
     });
   });
 

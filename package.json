@@ -12,11 +12,13 @@
     "create-neutrino-app": "cli/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node cli/index.js",
     "prettier": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
   },
   "license": "ISC",
   "dependencies": {
-    "commander": "^12.0.0"
+    "chalk": "4.1.2",
+    "commander": "^12.0.0",
+    "prompt-sync": "^4.2.0"
   }
 }
