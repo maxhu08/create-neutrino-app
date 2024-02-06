@@ -2,7 +2,6 @@ const currentDirectory = process.cwd();
 const path = require("path");
 const { exec } = require("child_process");
 const chalk = require("chalk");
-const { generateKeyPair } = require("crypto");
 
 const cloneTemplate = async ({ name }, callback) => {
   const destinationFolderPath = path.join(currentDirectory, name);
