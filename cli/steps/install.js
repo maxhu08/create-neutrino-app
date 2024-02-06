@@ -3,6 +3,7 @@ const chalk = require("chalk");
 const pmText = require("../utils/pmText");
 
 const installDependecies = async ({
+  name,
   destinationFolderPath,
   packageManager
 }) => {
@@ -28,7 +29,7 @@ const installDependecies = async ({
           process.exit(1);
         }
 
-        installCompletionMessage({ loadingIconInterval, packageManager });
+        installCompletionMessage({ name, loadingIconInterval, packageManager });
       }
     );
   } else if (packageManager === "yarn") {
@@ -38,7 +39,7 @@ const installDependecies = async ({
         process.exit(1);
       }
 
-      installCompletionMessage({ loadingIconInterval, packageManager });
+      installCompletionMessage({ name, loadingIconInterval, packageManager });
     });
   } else if (packageManager === "npm") {
     exec(`npm i`, { encoding: "utf-8" }, (err) => {
@@ -47,18 +48,23 @@ const installDependecies = async ({
         process.exit(1);
       }
 
-      installCompletionMessage({ loadingIconInterval, packageManager });
+      installCompletionMessage({ name, loadingIconInterval, packageManager });
     });
   }
 };
 
-const installCompletionMessage = ({ loadingIconInterval, packageManager }) => {
+const installCompletionMessage = ({
+  name,
+  loadingIconInterval,
+  packageManager
+}) => {
   clearInterval(loadingIconInterval);
   console.log(
     `\r\x1b[K${chalk.green("✔")} installed dependecies with ${pmText(
       packageManager
     )}`
   );
+  console.log(`\nnow just cd into \`${chalk.cyan(name)}\``);
 };
 
 module.exports = installDependecies;

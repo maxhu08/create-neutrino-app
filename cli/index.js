@@ -27,7 +27,7 @@ program
     // clone template
     cloneTemplate({ name }, ({ destinationFolderPath }) => {
       // install dependecies based on package manager
-      installDependecies({ destinationFolderPath, packageManager });
+      installDependecies({ name, destinationFolderPath, packageManager });
     });
   });
 
