@@ -14,7 +14,7 @@ const installDependecies = async ({
     process.stdout.write(
       `\r${chalk.magenta(
         loadingIconStates[loadingIconIndex]
-      )} installing dependecies with ${pmText(packageManager)}\n`
+      )} installing dependecies with ${pmText(packageManager)}`
     );
     loadingIconIndex = (loadingIconIndex + 1) % loadingIconStates.length;
   }, 100);
@@ -33,23 +33,31 @@ const installDependecies = async ({
       }
     );
   } else if (packageManager === "yarn") {
-    exec(`yarn i`, { encoding: "utf-8" }, (err) => {
-      if (err) {
-        console.error(`${chalk.red("✘")} err installing dependecies: ${err}`);
-        process.exit(1);
-      }
+    exec(
+      `cd ${destinationFolderPath} && yarn i`,
+      { encoding: "utf-8" },
+      (err) => {
+        if (err) {
+          console.error(`${chalk.red("✘")} err installing dependecies: ${err}`);
+          process.exit(1);
+        }
 
-      installCompletionMessage({ name, loadingIconInterval, packageManager });
-    });
+        installCompletionMessage({ name, loadingIconInterval, packageManager });
+      }
+    );
   } else if (packageManager === "npm") {
-    exec(`npm i`, { encoding: "utf-8" }, (err) => {
-      if (err) {
-        console.error(`${chalk.red("✘")} err installing dependecies: ${err}`);
-        process.exit(1);
-      }
+    exec(
+      `cd ${destinationFolderPath} && npm i`,
+      { encoding: "utf-8" },
+      (err) => {
+        if (err) {
+          console.error(`${chalk.red("✘")} err installing dependecies: ${err}`);
+          process.exit(1);
+        }
 
-      installCompletionMessage({ name, loadingIconInterval, packageManager });
-    });
+        installCompletionMessage({ name, loadingIconInterval, packageManager });
+      }
+    );
   }
 };
 
