@@ -14,7 +14,7 @@ const installDependecies = async ({
     process.stdout.write(
       `\r${chalk.magenta(
         loadingIconStates[loadingIconIndex]
-      )} installing dependecies with ${pmText(packageManager)}`
+      )} installing dependecies with ${pmText(packageManager)}\n`
     );
     loadingIconIndex = (loadingIconIndex + 1) % loadingIconStates.length;
   }, 100);
