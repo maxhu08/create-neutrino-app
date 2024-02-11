@@ -3,6 +3,7 @@
 const { program } = require("commander");
 const chalk = require("chalk");
 const prompt = require("prompt-sync")();
+const inquirer = require("inquirer");
 
 // steps
 const cloneTemplate = require("./steps/clone");
@@ -19,13 +20,22 @@ program
   .description(
     `tool to quickly generate a minimalistic template with module bundling, hmr, typescript, tailwind & sass configured`
   )
-  .action((name) => {
+  .action(async (name) => {
     if (!name) {
       name = prompt(`${chalk.blue("?")} enter the app name: `);
     }
 
+    let templateType = await inquirer.prompt([
+      {
+        type: "list",
+        name: "selection",
+        message: "what template to you want to use",
+        choices: ["typescript-tailwind-sass", "typescript"]
+      }
+    ]);
+
     // clone template
-    cloneTemplate({ name }, ({ destinationFolderPath }) => {
+    cloneTemplate({ name, templateType }, ({ destinationFolderPath }) => {
       // install dependecies based on package manager
       installDependecies({ name, destinationFolderPath, packageManager });
     });

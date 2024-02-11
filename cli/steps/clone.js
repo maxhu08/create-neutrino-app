@@ -3,10 +3,10 @@ const path = require("path");
 const { exec } = require("child_process");
 const chalk = require("chalk");
 
-const cloneTemplate = async ({ name }, callback) => {
+const cloneTemplate = async ({ name, templateType }, callback) => {
   const destinationFolderPath = path.join(currentDirectory, name);
 
-  const command = `npx degit https://github.com/maxhu08/create-neutrino-app/templates/typescript-taildwind-sass ${destinationFolderPath}`;
+  const command = `npx degit https://github.com/maxhu08/create-neutrino-app/templates/${templateType} ${destinationFolderPath}`;
 
   exec(`${command} > /dev/null 2>&1`, { encoding: "utf-8" }, (err) => {
     if (err) {
