@@ -1,0 +1,59 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #171717;
+  font-family: sans-serif;
+}
+
+#container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+#inner-container {
+  display: grid;
+  place-items: center;
+  margin-bottom: 5rem;
+}
+
+.logo {
+  height: 20rem;
+  margin-bottom: 5rem;
+}
+
+p {
+  color: #d4d4d4;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+code {
+  background-color: #262626;
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+}
+
+::selection {
+  background-color: #6366f140;
+}
+
+.rotate-animation {
+  animation: rotate infinite 1s ease-in-out;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(400deg);
+  }
+  85% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
