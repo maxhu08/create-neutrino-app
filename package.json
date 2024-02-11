@@ -1,7 +1,7 @@
 {
   "name": "create-neutrino-app",
-  "version": "1.0.5",
-  "author": "",
+  "version": "1.0.6",
+  "author": "maxhu08",
   "description": "tool to quickly generate a minimalistic template with module bundling, hmr, typescript, tailwind & sass configured",
   "keywords": [
     "template",
