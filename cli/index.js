@@ -25,7 +25,7 @@ program
       name = prompt(`${chalk.blue("?")} enter the app name: `);
     }
 
-    let templateType = await inquirer.prompt([
+    let templateChoice = await inquirer.prompt([
       {
         type: "list",
         name: "selection",
@@ -35,10 +35,13 @@ program
     ]);
 
     // clone template
-    cloneTemplate({ name, templateType }, ({ destinationFolderPath }) => {
-      // install dependecies based on package manager
-      installDependecies({ name, destinationFolderPath, packageManager });
-    });
+    cloneTemplate(
+      { name, templateType: templateChoice.selection },
+      ({ destinationFolderPath }) => {
+        // install dependecies based on package manager
+        installDependecies({ name, destinationFolderPath, packageManager });
+      }
+    );
   });
 
 program.parse(process.argv);
